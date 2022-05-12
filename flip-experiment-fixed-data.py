@@ -72,8 +72,7 @@ if __name__ == '__main__':
     exp_num_splits = np.array_split(exp_nums, mp.cpu_count())
     #attack_scales = [2, 4, 8, 10]
     #nt_regularization = [0, 0.01, 0.1, 1]
-    exp_param_pairs = list(itertools.product([0, 0.01, 0.1, 1], [8, 10]))
-    exp_param_pairs.append((1, 4))
+    exp_param_pairs = [(0.01, 10), (0.1, 10), (1, 10)]
     for reg, attack_scale in exp_param_pairs:
         print("Starting experiment with: ")
         print((reg, attack_scale))
