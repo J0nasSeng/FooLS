@@ -1,0 +1,4 @@
+,sample_noise,sample_weights,f,samples,common_cause_to_confounder_fraction,nodes,edges,dataset,graph_name
+0,gaussian,weight_sample,linear,10000,0,5,6,data_5_5.csv,graph_5_5.csv
+0,gaussian,weight_sample,linear,10000,0,20,41,data_20_30.csv,graph_20_30.csv
+0,gaussian,weight_sample,linear,10000,0,10,13,data_10_15.csv,graph_10_15.csv

@@ -13,6 +13,7 @@ import argparse
 import pickle
 import os
 import datetime
+from typing import List
 
 # import torch
 import torch.optim as optim
@@ -138,6 +139,10 @@ parser.add_argument('--attack-scale2', type=float, default=1.,
                     help='Attack-Scale2')
 parser.add_argument('--attack', action='store_true', default=False, 
                     help='Specify whether we try to attack the algo or not')
+parser.add_argument('--attack-idx', action='append',
+                    help='Index of variable in dataset to be attacked')
+parser.add_argument('--idx-attack-scale', action='append',
+                    help='Scale to be applied as attack on given variable-indices')
 
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
@@ -176,7 +181,7 @@ else:
 # ================================================
 # get data: experiments = {synthetic SEM, ALARM}
 # ================================================
-train_loader, valid_loader, test_loader, ground_truth_G = load_data_(args, args.data_sample_size, args.batch_size)
+train_loader, valid_loader, test_loader, ground_truth_G = load_sachs(args, args.batch_size)
 
 #===================================
 # load modules

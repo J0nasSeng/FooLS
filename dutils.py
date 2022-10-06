@@ -403,17 +403,18 @@ def load_data_discrete(args, batch_size=1000, suffix='', debug = False):
 
 def load_data_(args, num_samples=10000, batch_size=1000):
     X0 = np.random.normal(0, 1, num_samples)
-    X2 = np.random.normal(0, 1, num_samples)
-    X1 = args.scale1*X0 + args.scale2*X2 + np.random.normal(0, 1, num_samples)
-    #X2 = args.scale2*X1 + np.random.normal(0, 1, num_samples)
+    X1 = args.scale1 * X0 + np.random.normal(0, 1, num_samples)
+    X2 = args.scale2 * X1 + np.random.normal(0, 1, num_samples)
+    #X0 = np.random.normal(0, 1, num_samples)
+    #X1 = np.random.normal(0, 1, num_samples)
     X = np.array([X0, X1, X2]).T
 
     W = np.array([[0., 1., 0.],
-                  [0., 0., 0.],
-                  [0., 1., 0.]])
+                  [0., 0., 1.],
+                  [0., 0., 0.]])
     
     if args.attack:
-        X = scale(X)
+        #X = scale(X)
         X[:, 0] *= args.attack_scale0
         X[:, 1] *= args.attack_scale1
         X[:, 2] *= args.attack_scale2
@@ -427,6 +428,43 @@ def load_data_(args, num_samples=10000, batch_size=1000):
 
     return loader, loader, loader, G # thre times loader to stay compatible
 
+def load_sachs(args, batch_size=128, normalize=False, take_log=False):
+    X = pd.read_csv('./data/real-world/sachs.data.txt', sep='\t').to_numpy()
+    if take_log:
+        X = np.log(X)
+    if normalize:
+        X = scale(X)
+    
+    if args.attack:
+        X = scale(X)
+        for var_idx, attack_scale in zip(args.attack_idx, args.idx_attack_scale):
+            X[:, int(var_idx)] *= float(attack_scale)
+    
+    X = X.reshape((X.shape[0], X.shape[1], 1))
+    Xt = torch.FloatTensor(X)
+    dataset = TensorDataset(Xt, Xt)
+    loader = DataLoader(dataset, batch_size=batch_size)
+
+    G = nx.convert_matrix.from_numpy_array(np.zeros((X.shape[1], X.shape[1])))
+
+    return loader, loader, loader, G
+
+def load_n_node_data(args, batch_size=128):
+    X = pd.read_csv('./data/n-var-case/non-linear/data/data_10_15.csv', index_col=0).to_numpy()
+        
+    if args.attack:
+        #X = scale(X)
+        for var_idx, attack_scale in zip(args.attack_idx, args.idx_attack_scale):
+            X[:, int(var_idx)] *= float(attack_scale)
+    
+    X = X.reshape((X.shape[0], X.shape[1], 1))
+    Xt = torch.FloatTensor(X)
+    dataset = TensorDataset(Xt, Xt)
+    loader = DataLoader(dataset, batch_size=batch_size)
+
+    G = nx.convert_matrix.from_numpy_array(np.zeros((X.shape[1], X.shape[1])))
+
+    return loader, loader, loader, G
 
 def load_data(args, batch_size=1000, suffix='', debug = False):
     #  # configurations

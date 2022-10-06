@@ -1,0 +1,4 @@
+,sample_noise,sample_weights,f,samples,common_cause_to_confounder_fraction,nodes,edges,dataset,graph_name
+0,gaussian,weight_sample,cos,10000,0,10,13,0fdb77d6-c890-4af9-8627-6be4c29f39ac.csv,graph_10_15.csv
+0,gaussian,weight_sample,cos,10000,0,20,41,9a4d51a2-32bd-475a-89ff-3b0780d4becd.csv,graph_20_30.csv
+0,gaussian,weight_sample,cos,10000,0,5,6,1bdfc5f7-e3fc-460e-97e4-60b879ee5445.csv,graph_5_5.csv
