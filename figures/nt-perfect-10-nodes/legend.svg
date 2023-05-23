@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="189mm"
+   height="27mm"
+   viewBox="0 0 189 27"
+   version="1.1"
+   id="svg3248"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="legend.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3250"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.5554293"
+     inkscape:cx="253.30627"
+     inkscape:cy="69.112752"
+     inkscape:window-width="2560"
+     inkscape:window-height="1306"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3245">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath29433-4">
+      <path
+         d="M 0,0 H 432 V 288 H 0 Z"
+         id="path29431-6" />
+    </clipPath>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path3439-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-3-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path3439-6-3" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.31817"
+       x="137.84846"
+       y="5.508266"
+       id="text8083-1-2"><tspan
+         sodipodi:role="line"
+         style="font-size:6.35px;stroke-width:0.31817"
+         x="137.84846"
+         y="5.508266"
+         id="tspan15692-4">= edge in both</tspan></text>
+    <g
+       id="g29427-2"
+       transform="matrix(-0.2532399,-0.12536091,-0.12536091,0.2532399,165.27136,-42.794397)"
+       style="stroke-width:1.80158;stroke-miterlimit:4;stroke-dasharray:none">
+      <g
+         id="g29429-5"
+         clip-path="url(#clipPath29433-4)"
+         style="stroke-width:1.80158;stroke-miterlimit:4;stroke-dasharray:none">
+        <path
+           d="M 140.91138,252.86058 C 124.44331,244.47359 108.63943,236.42486 93.499723,228.71439"
+           style="fill:none;stroke:#000000;stroke-width:1.80158;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path29435-8" />
+        <path
+           d="m 102.44375,228.7806 -8.944027,-0.0662 5.313446,7.19495 3.630581,-7.12874 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.80158;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path29437-6" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.31817"
+       x="56.189697"
+       y="17.304916"
+       id="text8083-1"><tspan
+         sodipodi:role="line"
+         id="tspan8081-2"
+         style="font-size:6.35px;stroke-width:0.31817"
+         x="56.189701"
+         y="17.304916">= edge in prediction on </tspan><tspan
+         sodipodi:role="line"
+         style="font-size:6.35px;stroke-width:0.31817"
+         x="56.189697"
+         y="25.242416"
+         id="tspan15692">manipulated data</tspan></text>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.763609;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-6)"
+       d="m 1.1140279,15.775836 14.2924801,0.04382"
+       id="path3330-9" />
+    <path
+       style="fill:none;stroke:#00883a;stroke-width:0.763609;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.763609, 0.763609;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Mend-3-5)"
+       d="M 0.53194639,3.5825809 14.824488,3.5779927"
+       id="path3330-7-5" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.31817"
+       x="54.456337"
+       y="5.5222197"
+       id="text8083"><tspan
+         sodipodi:role="line"
+         id="tspan8081"
+         style="font-size:6.35px;stroke-width:0.31817"
+         x="54.456337"
+         y="5.5222197">= edge in ground truth</tspan></text>
+    <path
+       d="m 104.1631,21.014646 c 1.42063,0 2.78328,-0.564421 3.78782,-1.568957 1.00453,-1.004536 1.56895,-2.367184 1.56895,-3.787815 0,-1.420632 -0.56442,-2.783268 -1.56895,-3.787815 -1.00454,-1.004537 -2.36719,-1.568958 -3.78782,-1.568958 -1.42063,0 -2.78327,0.564421 -3.78781,1.568958 -1.004531,1.004547 -1.568953,2.367183 -1.568953,3.787815 0,1.420631 0.564422,2.783279 1.568953,3.787815 1.00454,1.004536 2.36718,1.568957 3.78781,1.568957 z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0f77ff;stroke-width:0.239562;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       id="path2646-3" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.31817"
+       x="151.53278"
+       y="17.776598"
+       id="text8083-1-2-6"><tspan
+         sodipodi:role="line"
+         style="font-size:6.35px;stroke-width:0.31817"
+         x="151.53278"
+         y="17.776598"
+         id="tspan15692-4-7">= manipulated variable</tspan></text>
+  </g>
+</svg>
