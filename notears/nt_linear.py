@@ -5,7 +5,9 @@ import scipy.optimize as sopt
 from scipy.special import expit as sigmoid
 
 
-def notears_linear(X, lambda1, loss_type, max_iter=100, h_tol=1e-8, rho_max=1e+16, w_threshold=0.3, log_gradients=False, gradient_log_dir: str=None, rand_init=False):
+def notears_linear(X, lambda1, loss_type, max_iter=100, h_tol=1e-8, rho_max=1e+16, 
+                   w_threshold=0.3, substract_variances=False, log_gradients=False, 
+                   gradient_log_dir: str=None, rand_init=False):
     """Solve min_W L(W; X) + lambda1 ‖W‖_1 s.t. h(W) = 0 using augmented Lagrangian.
 
     Args:
@@ -70,7 +72,12 @@ def notears_linear(X, lambda1, loss_type, max_iter=100, h_tol=1e-8, rho_max=1e+1
     def _func(w):
         """Evaluate value and gradient of augmented Lagrangian for doubled variables ([2 d^2] array)."""
         W = _adj(w)
-        loss, G_loss = _loss(W)
+        W_c = np.copy(W)
+        if substract_variances:
+            parentless = [i for i in range(W.shape[0]) if np.all(W[:, i] < w_threshold)]
+            for p in parentless:
+                W_c[p, p] = 1
+        loss, G_loss = _loss(W_c)
         h, G_h = _h(W)
         obj = loss + 0.5 * rho * h * h + alpha * h + lambda1 * w.sum()
         G_smooth = G_loss + (rho * h + alpha) * G_h
@@ -101,6 +108,7 @@ def notears_linear(X, lambda1, loss_type, max_iter=100, h_tol=1e-8, rho_max=1e+1
         if h <= h_tol or rho >= rho_max:
             break
     W_est = _adj(w_est)
+    print(W_est)
     W_est[np.abs(W_est) < w_threshold] = 0
     # log metadata
     if log_gradients:

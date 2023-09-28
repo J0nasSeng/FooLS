@@ -12,7 +12,8 @@ class GaussObsL0Pen(DecomposableScore):
 
     """
 
-    def __init__(self, data, lmbda=None, method='scatter', cache=True, debug=0):
+    def __init__(self, data, lmbda=None, method='raw', cache=True, debug=0,
+                 substract_var=True):
         """Creates a new instance of the class.
 
         Parameters
@@ -46,6 +47,7 @@ class GaussObsL0Pen(DecomposableScore):
         self.lmbda = 0.5 * np.log(self.n) if lmbda is None else lmbda
         self.method = method
         self.data = data
+        self._substract_var = substract_var
 
         # Precompute scatter matrices if necessary
         if method == 'scatter':
@@ -78,9 +80,11 @@ class GaussObsL0Pen(DecomposableScore):
         """
         # Compute MLE
         B, omegas = self._mle_full(A)
-        no_parents = [j for j in range(B.shape[0]) if np.all(B[:, j] == 0)]
-        for j in no_parents:
-            B[j, j] = 1
+        if self._substract_var:
+            no_parents = [j for j in range(B.shape[0]) if np.all(B[:, j] == 0)]
+            if len(no_parents) > 0:
+                for j in no_parents:
+                    B[j, j] = 1
         # Compute log-likelihood (without log(2π) term)
         M = self.data @ B
         R = self.data - M
@@ -177,13 +181,13 @@ class GaussObsL0Pen(DecomposableScore):
         # Compute the regression coefficients from a least squares
         # regression on the raw data
         if self.method == 'raw':
-            Y = self._centered[:, j]
+            Y = self.data[:, j]
             if len(parents) > 0:
-                X = np.atleast_2d(self._centered[:, parents])
+                X = np.atleast_2d(self.data[:, parents])
                 # Perform regression
                 coef = np.linalg.lstsq(X, Y, rcond=None)[0]
                 b[parents] = coef
-                sigma = np.var(Y - X @ coef)
+                sigma = 1/self.n * np.sum((Y - X @ coef)**2)
             else:
                 sigma = np.var(Y, ddof=0)
         # Or compute the regression coefficients from the
